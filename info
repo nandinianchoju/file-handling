@@ -1,0 +1,61 @@
+File Handling in Python
+File handling in Python allows you to perform operations such as creating, reading, writing, and deleting files. Python provides a built-in open() function to work with files, along with various modes and methods for efficient file management.
+
+Opening a File
+The open() function is used to open a file. It takes two arguments:
+
+File name: The name of the file to open.
+Mode: Specifies the purpose of opening the file (e.g., read, write).
+
+Common modes:
+
+'r': Read (default mode).
+'w': Write (creates a new file or overwrites an existing one).
+'a': Append (adds content to the end of the file).
+'b': Binary mode (e.g., 'rb', 'wb' for binary files).
+'x': Create (fails if the file already exists).
+
+Example:
+Pythonfile = open("example.txt", "r")  # Opens the file in read mode
+
+
+Reading a File
+You can read a file using methods like:
+
+read(): Reads the entire file.
+readline(): Reads one line at a time.
+readlines(): Reads all lines into a list.
+
+Example:
+Pythonwith open("example.txt", "r") as file:
+    content = file.read()
+    print(content)
+
+
+Writing to a File
+To write to a file, use the 'w' or 'a' mode. The write() method adds content to the file.
+Example:
+Pythonwith open("example.txt", "w") as file:
+    file.write("Hello, World!")
+
+
+Closing a File
+Always close a file after use to free up system resources. Use the close() method or a with statement (which automatically closes the file).
+Example:
+Pythonfile = open("example.txt", "r")
+file.close()
+
+
+Additional Operations
+
+Check if a file exists: Use the os module.
+Delete a file: Use os.remove().
+Rename a file: Use os.rename().
+
+Example:
+Pythonimport os
+if os.path.exists("example.txt"):
+    os.remove("example.txt")
+
+
+Python's file handling is simple yet powerful, making it easy to manage files effectively. Let me know if you'd like examples for specific use cases!
